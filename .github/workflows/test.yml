@@ -19,4 +19,4 @@ jobs:
         with:
           version: ${{ steps.vars.outputs.tag }}
           targets: |
-            './package.json'
+            ./package.json

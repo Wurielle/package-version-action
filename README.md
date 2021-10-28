@@ -9,7 +9,7 @@ This does not push the updated `package.json` files back to your development bra
 
 ### `version`
 
-The version you want to set. If the version is prefixed with `v` then it will be striped (e.g.: `v1.2.3` will be set as `"version": "1.2.3"`).
+The version you want to set. If the version is prefixed with `v` then it will be stripped (e.g.: `v1.2.3` will be set as `"version": "1.2.3"`).
 
 ### `targets`
 
@@ -39,5 +39,5 @@ jobs:
         with:
           version: ${{ steps.vars.outputs.tag }}
           targets: |
-            './package.json'   
+            ./package.json 
 ```
