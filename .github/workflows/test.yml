@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    name: A job to test the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: wurielle/package-version-action@1
+        with:
+          version: v1.2.3
+          targets: './package.json'

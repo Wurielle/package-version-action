@@ -1,0 +1,12 @@
+name: 'Package Version'
+description: 'Set the version of specified package.json files.'
+inputs:
+  version:
+    description: 'Version to set'
+    required: true
+  paths:
+    description: 'Paths to package.json files'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
