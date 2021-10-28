@@ -5,7 +5,7 @@ const core = require('@actions/core');
 
 try {
     let version = core.getInput('version');
-    if (version.startsWith('v')) version.substring(1);
+    if (version.startsWith('v')) version = version.substring(1);
 
     const targets = core.getMultilineInput('targets');
     targets.forEach((packagePath) => {
