@@ -8450,21 +8450,22 @@ const github = __nccwpck_require__(5438);
 
 try {
     const version = core.getInput('version');
-    let paths = core.getInput('version');
-    if (paths && typeof paths === 'string') paths = [paths];
+    let targets = core.getInput('targets');
+    if (targets && typeof targets === 'string') targets = [targets];
 
     console.log({
         version,
-        paths,
+        targets,
     });
 
-    if (paths && typeof paths === 'object' && Array.isArray(paths)) {
-        paths.forEach((packagePath) => {
+    if (targets && typeof targets === 'object' && Array.isArray(targets)) {
+        targets.forEach((packagePath) => {
             const packageFilePath = path.join(github.workspace, packagePath);
+            console.log(packageFilePath);
             const packageFileData = fs.readFileSync(packageFilePath);
-            const package = JSON.parse(packageFileData);
+            const currentPackage = JSON.parse(packageFileData);
             const newPackage = {
-                ...package,
+                ...currentPackage,
                 version,
             }
             fs.writeFileSync(packageFilePath, JSON.stringify(newPackage, null, 2));

@@ -4,7 +4,7 @@ inputs:
   version:
     description: 'Version to set'
     required: true
-  paths:
+  targets:
     description: 'Paths to package.json files'
     required: true
 runs:
