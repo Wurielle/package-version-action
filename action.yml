@@ -3,10 +3,10 @@ description: 'Set the version of specified package.json files.'
 inputs:
   version:
     description: 'Version to set'
-    required: true
+    required: false
   targets:
     description: 'Paths to package.json files'
-    required: true
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
