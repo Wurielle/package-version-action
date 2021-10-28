@@ -17,7 +17,10 @@ try {
             version,
         }
         fs.writeFileSync(packageFilePath, JSON.stringify(newPackage, null, 2));
+        console.log('------------------------')
+        console.log('Package: ', packageFilePath)
         console.log(JSON.parse(fs.readFileSync(packageFilePath, null, 2)));
+        console.log('------------------------')
     })
 } catch (error) {
     core.setFailed(error.message);
