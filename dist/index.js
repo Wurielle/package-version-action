@@ -1683,7 +1683,7 @@ const core = __nccwpck_require__(2186);
 
 try {
     let version = core.getInput('version');
-    if (version.startsWith('v')) version.substring(1);
+    if (version.startsWith('v')) version = version.substring(1);
 
     const targets = core.getMultilineInput('targets');
     targets.forEach((packagePath) => {
