@@ -1,5 +1,6 @@
 name: 'Package Version'
 description: 'Set the version of specified package.json files.'
+main: 'dist/index.js'
 inputs:
   version:
     description: 'Version to set'
