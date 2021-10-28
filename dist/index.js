@@ -8460,8 +8460,8 @@ try {
 
     if (targets && typeof targets === 'object' && Array.isArray(targets)) {
         targets.forEach((packagePath) => {
+            console.log(github.workspace, packagePath);
             const packageFilePath = path.join(github.workspace, packagePath);
-            console.log(packageFilePath);
             const packageFileData = fs.readFileSync(packageFilePath);
             const currentPackage = JSON.parse(packageFileData);
             const newPackage = {
