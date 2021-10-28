@@ -15,5 +15,5 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - uses: wurielle/package-version-action@v1
         with:
-          version: ${ steps.vars.outputs.tag }}
+          version: ${{ steps.vars.outputs.tag }}
           targets: './package.json'
