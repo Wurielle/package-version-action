@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: wurielle/package-version-action@1
+      - uses: wurielle/package-version-action@1.0.0
         with:
           version: v1.2.3
           targets: './package.json'
