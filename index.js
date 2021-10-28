@@ -16,8 +16,8 @@ try {
 
     if (targets && typeof targets === 'object' && Array.isArray(targets)) {
         targets.forEach((packagePath) => {
-            console.log(github.workspace, packagePath);
-            const packageFilePath = path.join(github.workspace, packagePath);
+            console.log(github, process.cwd(), packagePath);
+            const packageFilePath = path.join(process.cwd(), packagePath);
             const packageFileData = fs.readFileSync(packageFilePath);
             const currentPackage = JSON.parse(packageFileData);
             const newPackage = {
