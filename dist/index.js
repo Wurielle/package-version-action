@@ -8460,8 +8460,8 @@ try {
 
     if (targets && typeof targets === 'object' && Array.isArray(targets)) {
         targets.forEach((packagePath) => {
-            console.log(github, process.cwd(), packagePath);
-            const packageFilePath = path.join(process.cwd(), packagePath);
+            console.log(process.env.GITHUB_WORKSPACE, packagePath);
+            const packageFilePath = path.join(process.env.GITHUB_WORKSPACE, packagePath);
             const packageFileData = fs.readFileSync(packageFilePath);
             const currentPackage = JSON.parse(packageFileData);
             const newPackage = {
@@ -8469,7 +8469,7 @@ try {
                 version,
             }
             fs.writeFileSync(packageFilePath, JSON.stringify(newPackage, null, 2));
-            console.log(fs.readFileSync(packageFilePath));
+            console.log(JSON.parse(fs.readFileSync(packageFilePath, null, 2)));
         })
     }
 
